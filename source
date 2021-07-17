@@ -1,0 +1,130 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local BEARALPHA = Instance.new("ScreenGui")
+local main = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local Title = Instance.new("TextLabel")
+local AutoFarm = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local Full = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local close = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local openmain = Instance.new("Frame")
+local open = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+
+--Properties:
+
+BEARALPHA.Name = "BEARALPHA"
+BEARALPHA.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+BEARALPHA.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+BEARALPHA.ResetOnSpawn = false
+
+main.Name = "main"
+main.Parent = BEARALPHA
+main.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
+main.Position = UDim2.new(0.233802825, 0, 0.0588235296, 0)
+main.Size = UDim2.new(0, 567, 0, 465)
+main.Visible = false
+
+UICorner.Parent = main
+
+Title.Name = "Title"
+Title.Parent = main
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.Position = UDim2.new(0.322751343, 0, 0, 0)
+Title.Size = UDim2.new(0, 200, 0, 50)
+Title.Font = Enum.Font.SourceSans
+Title.Text = "AUTO FARM"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextSize = 50.000
+
+AutoFarm.Name = "AutoFarm"
+AutoFarm.Parent = main
+AutoFarm.BackgroundColor3 = Color3.fromRGB(84, 84, 84)
+AutoFarm.Position = UDim2.new(0.0476190485, 0, 0.159139782, 0)
+AutoFarm.Size = UDim2.new(0, 200, 0, 50)
+AutoFarm.Font = Enum.Font.SourceSans
+AutoFarm.Text = "AUTOFARM"
+AutoFarm.TextColor3 = Color3.fromRGB(255, 255, 255)
+AutoFarm.TextSize = 30.000
+
+UICorner_2.Parent = AutoFarm
+
+Full.Name = "Full"
+Full.Parent = main
+Full.BackgroundColor3 = Color3.fromRGB(84, 84, 84)
+Full.Position = UDim2.new(0.599647284, 0, 0.159139782, 0)
+Full.Size = UDim2.new(0, 200, 0, 50)
+Full.Font = Enum.Font.SourceSans
+Full.Text = "ANTI RUIN"
+Full.TextColor3 = Color3.fromRGB(255, 255, 255)
+Full.TextSize = 30.000
+
+UICorner_3.Parent = Full
+
+close.Name = "close"
+close.Parent = main
+close.BackgroundColor3 = Color3.fromRGB(84, 84, 84)
+close.Position = UDim2.new(0.941798925, 0, 0, 0)
+close.Size = UDim2.new(0, 33, 0, 31)
+close.Font = Enum.Font.SourceSans
+close.Text = "X"
+close.TextColor3 = Color3.fromRGB(255, 0, 0)
+close.TextSize = 30.000
+
+UICorner_4.Parent = close
+
+openmain.Name = "openmain"
+openmain.Parent = BEARALPHA
+openmain.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+openmain.BackgroundTransparency = 1.000
+openmain.Position = UDim2.new(0, 0, 0.521821618, 0)
+openmain.Size = UDim2.new(0, 89, 0, 26)
+
+open.Name = "open"
+open.Parent = openmain
+open.BackgroundColor3 = Color3.fromRGB(89, 89, 89)
+open.Size = UDim2.new(0, 89, 0, 26)
+open.Font = Enum.Font.SourceSans
+open.Text = "OPEN"
+open.TextColor3 = Color3.fromRGB(255, 255, 255)
+open.TextSize = 30.000
+
+UICorner_5.Parent = open
+openmain.Active = true
+openmain.Draggable = true
+main.Visible = false
+main.Active = true
+main.Draggable = true
+open.MouseButton1Down:connect(function()
+openmain.Visible = false
+main.Visible = true
+end)
+close.MouseButton1Down:connect(function()
+main.Visible = false
+openmain.Visible = true
+end)
+AutoFarm.MouseButton1Down:connect(function()
+while true do
+wait(3)
+
+local p1 = game.Players.LocalPlayer.Character.HumanoidRootPart
+local pos = p1.CFrame
+
+p1.CFrame = game.Workspace.Obby.Quidz.CFrame
+
+wait(7)
+end
+end)
+Full.MouseButton1Down:connect(function()
+while true do
+wait(45)
+game.Players.LocalPlayer.Character.Humanoid.RigType = "R6"
+end
+end)
