@@ -1,7 +1,5 @@
--- Gui to Lua
--- Version: 3.2
+--BY YDEX
 
--- Instances:
 
 local BEARALPHA = Instance.new("ScreenGui")
 local main = Instance.new("Frame")
